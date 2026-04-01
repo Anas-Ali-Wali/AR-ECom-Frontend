@@ -1,0 +1,56 @@
+<div class="login-wrapper">
+  <div class="login-card">
+
+    <div class="right-panel">
+      <div class="logo"></div>
+
+      <h2>Welcome Back!</h2>
+
+      <!-- Server error -->
+      <div *ngIf="errorMsg" class="error-msg">
+        <span class="error-icon">!</span> {{ errorMsg }}
+      </div>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+        <div class="field-group">
+          <input
+            type="email"
+            formControlName="email"
+            placeholder="Enter Email Address..."
+            class="input-field"
+            [class.input-error]="email?.invalid && email?.touched"
+          />
+          <div class="validation-msg" *ngIf="email?.touched && email?.hasError('required')">
+            Email is required.
+          </div>
+          <div class="validation-msg" *ngIf="email?.touched && email?.hasError('email')">
+            Please enter a valid email.
+          </div>
+        </div>
+
+        <div class="field-group">
+          <input
+            type="password"
+            formControlName="password"
+            placeholder="Password"
+            class="input-field"
+            [class.input-error]="password?.invalid && password?.touched"
+          />
+          <div class="validation-msg" *ngIf="password?.touched && password?.hasError('required')">
+            Password is required.
+          </div>
+          <div class="validation-msg" *ngIf="password?.touched && password?.hasError('minlength')">
+            Password must be at least 6 characters.
+          </div>
+        </div>
+
+        <button type="submit" class="login-btn" [disabled]="loading">
+          {{ loading ? 'Logging in...' : 'Login' }}
+        </button>
+
+      </form>
+    </div>
+
+  </div>
+</div>

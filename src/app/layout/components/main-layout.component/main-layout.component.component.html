@@ -1,0 +1,41 @@
+<div class="d-flex layout">
+
+  <!-- Sidebar -->
+  <nav class="sidebar bg-success text-white p-3">
+    <h4 class="mb-4">EComSaaS</h4>
+
+    <ul class="nav flex-column">
+      <li class="nav-item mb-2">
+        <a class="nav-link text-white" routerLink="/dashboard">
+          <i class="bi bi-speedometer2 me-2"></i> Dashboard
+        </a>
+      </li>
+
+      <li class="nav-item mb-2">
+        <a class="nav-link text-white" routerLink="/products">
+          <i class="bi bi-box me-2"></i> Products
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="flex-grow-1">
+
+    <!-- Header -->
+    <header class="d-flex justify-content-between align-items-center bg-white shadow-sm px-4 py-3">
+      <h5 class="mb-0">Dashboard</h5>
+
+      <div>
+        <span class="me-3">👤 {{ fullName }}</span>
+        <button class="btn btn-outline-danger btn-sm" (click)="logout()">Logout</button>
+      </div>
+    </header>
+
+    <!-- Page Content -->
+    <div class="p-4 bg-light min-vh-100">
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+</div>
