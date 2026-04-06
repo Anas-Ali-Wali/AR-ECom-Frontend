@@ -8,6 +8,14 @@ const routes: Routes = [
     component: MainLayoutComponentComponent,
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+
+            {
+        path: 'users',
+        loadChildren: () =>
+          import('../application-user/application-user.module')
+            .then(m => m.ApplicationUserModule)
+      }
+
     ],
   },
 ];
