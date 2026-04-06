@@ -2,8 +2,11 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApplicationUser, RegisterDto } from '../models/user';
-import { environment } from 'src/Environment/environment';
+// import { environment } from 'src/Environment/environment';
 // import { environment } from 'src/Environment/environment.proud';
+
+import { environment } from 'src/Environment/environment';  // ✅ tumhara path sahi hai
+
 
 
 @Injectable({
