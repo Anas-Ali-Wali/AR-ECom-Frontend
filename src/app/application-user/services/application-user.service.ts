@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApplicationUser, RegisterDto } from '../models/user';
+import { environment } from 'src/Environment/environment.proud';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,8 @@ import { ApplicationUser, RegisterDto } from '../models/user';
 export class ApplicationUserService {
 
 
-   private apiUrl = 'https://localhost:7071/api/Auth';
+  //  private apiUrl = 'https://localhost:7071/api/Auth';
+  private apiUrl = `${environment.apiUrl}Auth`;
    
 
 

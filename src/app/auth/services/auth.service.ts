@@ -3,13 +3,15 @@ import { LoginResponse } from '../interfaces/auth';
 import { Router } from '@angular/router';
 import { Observable, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/Environment/environment.proud';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-   private apiUrl = 'https://localhost:7071/api/Auth';
+  //  private apiUrl = 'https://localhost:7071/api/Auth';
+  private apiUrl = `${environment.apiUrl}Auth`;
 
   constructor(private http: HttpClient, private router: Router) {}
 
